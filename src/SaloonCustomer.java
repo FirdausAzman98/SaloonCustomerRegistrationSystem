@@ -74,7 +74,22 @@ public final class SaloonCustomer {
         
         jbuttonOk.addMouseListener(new MouseAdapter() {        
         public void mouseClicked(MouseEvent e) {
-   
+           
+            String username = jlUsername.getText();
+            String password = jlPass.getText();
+
+            if (username.equals("fiqa") && password.equals("12345")) {
+                JOptionPane.showMessageDialog(null, "Login successfil");
+                jlUsername.setText(null);
+                jlPass.setText(null);
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid Details");
+                jlUsername.setText(null);
+                jlPass.setText(null);
+            }
+
+
+        
         JFrame frame = new JFrame("Beauty Saloon Customer Registration");
         frame.setSize(450, 450);
         frame.getContentPane().setBackground( Color.lightGray );
@@ -173,7 +188,7 @@ public final class SaloonCustomer {
                 writeData();
             }
         }); 
-  
+       
         
 
         readData();
